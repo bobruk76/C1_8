@@ -24,23 +24,17 @@ h1 {
   background-color: black;
 }
 
-.target {
-  background-color: green;
-  color: white;
-  font-size: 24pt;
-  text-align: center;
-}
-
-.miss {
-  background-color: red;
-}
-
 .grid-wrapper {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
 }
 
-#button{
+#btn{
+  background-color: aquamarine;
+  color: blueviolet;
+  font-size: 5rem;
+  width: 20rem;
+  height: 10rem;
   overflow: auto;
 }

@@ -33,6 +33,17 @@ jQuery.prototype.class = function(name){
   return this;
 }
 
+jQuery.prototype.html = function(newHTML=''){
+  if (newHTML !== ''){
+    let temp = document.createElement('div');
+    temp.innerHTML = newHTML;
+    let htmlObject = temp.firstChild;
+    this.each(element => element = element.replaceWith(htmlObject));
+  }
+
+  return this;
+}
+
 const $ = (e) => new jQuery(e);
 
 // $('button').hide().show().click(e => console.log(e)).class('name')
