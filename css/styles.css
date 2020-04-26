@@ -1,0 +1,46 @@
+
+body{
+  display: grid;
+  grid-template-rows: 21vh 78vh;
+  background:  rgba(180, 178, 178, 0.274);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-size: 2vw;
+}
+
+.game-field {
+  background-color: orange;
+  margin: 5px;
+  line-height: 10vh;
+}
+
+.game-field:not(.target):not(.miss):active{
+  background-color: black;
+}
+
+.target {
+  background-color: green;
+  color: white;
+  font-size: 24pt;
+  text-align: center;
+}
+
+.miss {
+  background-color: red;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+#button{
+  overflow: auto;
+}
