@@ -35,13 +35,23 @@ jQuery.prototype.class = function(name){
 
 jQuery.prototype.html = function(newHTML=''){
   if (newHTML !== ''){
-    let temp = document.createElement('div');
-    temp.innerHTML = newHTML;
-    let htmlObject = temp.firstChild;
-    this.each(element => element = element.replaceWith(htmlObject));
+    this.each(element => {
+      let temp = document.createElement('div');
+      temp.innerHTML = newHTML;
+      let htmlObject = temp.firstChild;
+      element.replaceWith(htmlObject);
+    });
   }
 
   return this;
+}
+
+jQuery.prototype.text = function(newTextContent=''){
+  if (newTextContent !== ''){
+    this.each(element => element.textContent = newTextContent);
+  }
+
+  return [ this.textContent ];
 }
 
 const $ = (e) => new jQuery(e);
