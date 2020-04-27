@@ -49,9 +49,10 @@ jQuery.prototype.html = function(newHTML=''){
 jQuery.prototype.text = function(newTextContent=''){
   if (newTextContent !== ''){
     this.each(element => element.textContent = newTextContent);
-  }
-
-  return [ this.textContent ];
+  };
+  let result = [];
+  this.each(element => result.push(element.textContent));
+  return result;
 }
 
 const $ = (e) => new jQuery(e);
