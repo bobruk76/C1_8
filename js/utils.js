@@ -59,12 +59,13 @@ jQuery.prototype.text = function(newTextContent=''){
   return result;
 }
 
-jQuery.prototype.value = function(){
-  if (newTextContent !== ''){
-    this.each(element => element.textContent = newTextContent);
+jQuery.prototype.value = function(newValue = null){
+  if (newValue !== null){
+    this.each(element => element.value = newValue);
   };
-  let result = [];
-  this.each(element => result.push(element.textContent));
+    let result = [];
+   this.each(element => result.push(element.value));
+   console.log(result);
   return result;
 }
 const $ = (e) => new jQuery(e);
