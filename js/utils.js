@@ -42,8 +42,12 @@ jQuery.prototype.html = function(newHTML=''){
       element.replaceWith(htmlObject);
     });
   }
+  let result = [];
+  this.each(element => {
+    result.push(element.outerHTML);
+  });
 
-  return this;
+  return result;
 }
 
 jQuery.prototype.text = function(newTextContent=''){
@@ -55,6 +59,14 @@ jQuery.prototype.text = function(newTextContent=''){
   return result;
 }
 
+jQuery.prototype.value = function(){
+  if (newTextContent !== ''){
+    this.each(element => element.textContent = newTextContent);
+  };
+  let result = [];
+  this.each(element => result.push(element.textContent));
+  return result;
+}
 const $ = (e) => new jQuery(e);
 
 // $('button').hide().show().click(e => console.log(e)).class('name')
